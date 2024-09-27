@@ -6816,6 +6816,15 @@
             "tcp": true
         }
     ],
+    "6463": [
+        {
+            "description": "Discord",
+            "udp": false,
+            "status": "Official",
+            "port": "6463",
+            "tcp": true
+        }
+    ],
     "6502": [
         {
             "description": "Netop Business Solutions - NetOp Remote Control",
@@ -7716,6 +7725,15 @@
             "udp": false,
             "status": "Unofficial",
             "port": "8020",
+            "tcp": true
+        }
+    ],
+    "8021": [
+        {
+            "description": "Common FTP proxy port",
+            "udp": false,
+            "status": "Unofficial",
+            "port": "8021",
             "tcp": true
         }
     ],
@@ -10479,6 +10497,24 @@
             "tcp": false
         }
     ],
+    "27036": [
+        {
+            "description": "Steam Client",
+            "udp": true,
+            "status": "Official",
+            "port": "27036",
+            "tcp": true
+        }
+    ],
+    "27060": [
+        {
+            "description": "Steam Client",
+            "udp": false,
+            "status": "Unofficial",
+            "port": "27060",
+            "tcp": true
+        }
+    ],
     "27374": [
         {
             "description": "Sub7 default.",
@@ -11043,6 +11079,42 @@
             "udp": true,
             "status": "Official",
             "port": "49151",
+            "tcp": true
+        }
+    ],
+    "57343": [
+        {
+            "description": "Apple Xsan Filesystem Access",
+            "udp": false,
+            "status": "Official",
+            "port": "57343",
+            "tcp": true
+        }
+    ],
+    "60312": [
+        {
+            "description": "Apple Xsan Filesystem Access",
+            "udp": false,
+            "status": "Official",
+            "port": "60312",
+            "tcp": true
+        }
+    ],
+    "60322": [
+        {
+            "description": "Apple Xsan Filesystem Access",
+            "udp": false,
+            "status": "Official",
+            "port": "60322",
+            "tcp": true
+        }
+    ],
+    "61459": [
+        {
+            "description": "Apple Xsan Filesystem Access",
+            "udp": false,
+            "status": "Official",
+            "port": "61459",
             "tcp": true
         }
     ]
