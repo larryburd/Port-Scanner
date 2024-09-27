@@ -22,15 +22,15 @@ for port in range(1, 65535):
   else:
     # Append a message for any ports that we can connect to
     ports_found.append(port)
-  
+
+# Add the app descriptions for each open port
+# if it exists in the port list JSON file
 for p in ports_found:
-  if p > 49151:
+  try:
+    app = port_list[str(p)][0]['description']
+  # a keyError tells us the port wasn't found in the JSON list
+  except KeyError:
     app = "Unknown"
-  else:
-    try:
-      app = port_list[str(p)][0]['description']
-    except KeyError:
-      app = "Unknown"
   
   msgs.append(f"Port {p} is open.  Application: {app}")
 
