@@ -1,14 +1,24 @@
 import socket
 import json
+from os.path import exists
 
-# Import the port list from the filesystem
-with open('ports.lists.json') as f:
-  port_list = json.load(f)
+port_list_filepath = 'ports.lists.json'
+port_list = []
 
-# Array of ports that are found to be open
+# Check if the port list file exists
+if exists(port_list_filepath):
+  # Import the port list from the filesystem
+  with open(port_list_filepath) as f:
+    port_list = json.load(f)
+else:
+  print('PORT LIST NOT FOUND IN CURRENT FOLDER')
+  print('ALL PORT APPLICATIONS WILL BE LISTED AS UNKOWN')
+
+# Arrays of ports that are found to be open and messages for printing
 ports_found = []
 msgs = []
 
+# PRIMARY SYSTEM LOGIC
 # Loop through all possible ports
 # and add any messages received to the array
 for port in range(1, 65535):
@@ -27,8 +37,11 @@ for port in range(1, 65535):
 # if it exists in the port list JSON file
 for p in ports_found:
   try:
-    app = port_list[str(p)][0]['description']
-  # a keyError tells us the port wasn't found in the JSON list
+    if len(port_list) > 0:
+      app = port_list[str(p)][0]['description']
+    else:
+      app = "Unknown"
+  # a KeyError tells us the port wasn't found in the JSON list
   except KeyError:
     app = "Unknown"
   
